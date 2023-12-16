@@ -4,13 +4,13 @@ const mysql = require('mysql');
 const contractAbi = require('../backend/ABI/abi.json');
 
 // Initialize Web3 with your Ethereum node endpoint
-const web3 = new Web3('https://rpc-mumbai.maticvigil.com');
+const web3 = new Web3(process.env.API_URL);
 
 // Replace with the address of your TransparentUpgradeableProxy contract
 const contractAddress = '0xCe017C647A01f8d1BE076145B05b14AC1085f19b';
 
 // Replace with the private key of the sender account
-const privateKey = '0xeb548cd9aabc79392d5b01ff8b6d74168cfe99a8e370c03eb0aa466f87bb77cb';
+const privateKey = [process.env.PRIVATE_KEY];
 
 // Create a Web3 account using the private key
 const account = web3.eth.accounts.privateKeyToAccount(privateKey);
