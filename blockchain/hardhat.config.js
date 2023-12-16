@@ -14,13 +14,13 @@ module.exports = {
   networks: {
     hardhat: {},
     polygon: {
-      url:  "https://rpc-mumbai.maticvigil.com",
-      accounts: ['0xeb548cd9aabc79392d5b01ff8b6d74168cfe99a8e370c03eb0aa466f87bb77cb'],
+      url:  API_URL ,
+      accounts: [PRIVATE_KEY],
       //gasPrice: 225000000000,
     },
   },
   etherscan: {
-    apiKey: 'CTZ7FPH21A754TIR576BZJRRGM8YCCU19W',
+    apiKey: API_KEY,
   },
 };
 
