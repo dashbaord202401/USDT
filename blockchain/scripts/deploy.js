@@ -9,8 +9,8 @@ const TransparentUpgradeableProxyBytecode = TransparentUpgradeableProxy.bytecode
 const logicContractAddress = '0x65B087CDd160F5F97A452b123E21B95c0E96Ba05';
 const adminAddress = '0x5b678eDDA7CB6a0C8286194AC4D6Df827E7efC2e';
 async function main() {
-    const provider = new ethers.providers.JsonRpcProvider("https://rpc-mumbai.maticvigil.com");
-    const wallet = new ethers.Wallet('0xeb548cd9aabc79392d5b01ff8b6d74168cfe99a8e370c03eb0aa466f87bb77cb' , provider);
+    const provider = new ethers.providers.JsonRpcProvider(process.env.API_URL);
+    const wallet = new ethers.Wallet(process.env.PRIVATE_KEY , provider);
     const signer = wallet.connect(provider);
     console.log(`Deploying contracts with the account: ${signer.address}`);
 

@@ -2,9 +2,9 @@ const { ethers } = require('ethers');
 
 async function main() {
     const provider = new ethers.providers.JsonRpcProvider(
-        'https://rpc-mumbai.maticvigil.com'
+        process.env.API_URL
     );
-    const wallet = new ethers.Wallet("0xeb548cd9aabc79392d5b01ff8b6d74168cfe99a8e370c03eb0aa466f87bb77cb", provider);
+    const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
     const signer = wallet.connect(provider);
 
     const TransparentUpgradeableProxyAddress = "0xCe017C647A01f8d1BE076145B05b14AC1085f19b";
